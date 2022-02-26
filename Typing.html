@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans+Condensed">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+</head>
+<body>
+   
+    <div class="container"> 
+        <header>Essmann's typing site</header>
+        <h1>WPM</h1> 
+        <h2 class="type"></h2><div class="timer" >60</div> 
+        
+       <div class="inputs">
+        <input type="text" id="typing" placeholder="Type here">
+        
+        <img src="reset.png"  alt="" class="reset">
+       </div>
+       <div class="data">
+           Typed: 0          Accuracy: 0
+       </div>
+       
+       <div class="scores">
+           
+           <div>
+               
+           </div>
+       </div>
+    </div>
+    <button onclick="hide_scores()">Show saved results</button id="show">
+    <div class="footer">
+        
+    </div>
+   <script src="Typing.js"></script>
+</body>
+
+</html>
+
+<style>
+    header{
+        font-size: xx-large;
+        letter-spacing: 4px;
+        font-weight: bolder;
+    }
+#show{
+    display: none;
+}
+      input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+    .inputs::placeholder{
+        color: #00ce7c;
+    }
+    .correct{
+        color:  #00ce7c
+    }
+    .incorrect{
+        color: #ff3a32;
+    }
+    button{
+        border-radius: 15px;
+        border-color:  #8f1818;
+        display: none;
+    }
+    h1{
+        text-align: center;
+    }
+    img{
+        height: 24px;
+        width: 24px;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #202020;
+        color:  #f44c7f;
+        font-family: 'Shizuru';
+    }
+    .container{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    h2{
+        top: -15px;
+        position: relative;
+        text-align: center;
+        letter-spacing: 2px;
+       /* border: 1px solid black; */
+        height: 4rem;
+        margin: 0;
+        color: rgb(7, 5, 5);
+        color:  white;
+        
+        
+                
+    }
+    
+    input{
+        position: relative;
+        top: 120px;
+        right: -47%;
+        color: white;
+        border: none;
+        flex: 1;
+        margin-left: 5px;
+        height: 30px;
+        height: 4rem;
+        font-size:x-large;
+        
+        
+        
+        font-family: 'Shizuru';
+        background: transparent;
+        border: none
+
+        
+    }
+    .inputs{
+        display: flex;
+    }
+    .timer{
+        flex: 0.15;
+        text-align: center;
+        font-size:x-large;
+       
+    }
+    
+    .scores{
+        /* border: 1px solid black;*/
+        flex-direction: row;
+        width: 10%;
+        height: 100vh;
+        text-align: center;
+        display: none;
+        }
+    .start{
+        flex: 0.15;
+        background:  #791717;
+        
+    }
+    .data{
+        
+        display: none;
+        height: 40px;
+    }
+
+</style>
