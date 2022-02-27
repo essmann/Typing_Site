@@ -37,10 +37,15 @@
             }
         };
     })()
-    
+    document.querySelector(".sixty").style.color = "#d40e4a"
     
     document.querySelector(".data").innerHTML = "Typed: " + words_typed + " " + "Total spaces done: " + total_words_typed  +  " " + "Accuracy: " + accuracy  + " %"
     input.addEventListener("keypress",(e)=>{
+        
+       
+        
+        
+        
        start()
         if(e.code == 'Space'){
         let typed = input.value.split(" ")
@@ -68,6 +73,7 @@
          console.log(rand_array);
          let h = words_typed/total_words_typed
         let accuracy = h * 100
+        
          document.querySelector(".data").innerHTML = "Typed: " + words_typed + " " + "Total spaces done: " + total_words_typed +  " " + "Accuracy: " + accuracy + " %"
          document.querySelector("h1").textContent = "WPM: " + Math.floor(wpm)
         //console.log(wpm);
@@ -158,7 +164,9 @@
             console.log(output.childNodes[spaces].textContent, "output.childnodes")
             input.value = ''
         }
+        
         spaces++
+        
         
         
         
@@ -172,7 +180,7 @@
         var el = document.createElement("span");
         var br = document.createElement("br")
         el.textContent = arrays[0][rand] + " "
-    
+       
         rand_array.push(arrays[0][rand])
         console.log(rand_array)
         output.appendChild(el)
@@ -187,12 +195,14 @@
     })
     function timer(){
        const x = setInterval(()=>{
+           let save_count = 0;
             if(document.querySelector(".timer").innerHTML==0){
                 add_score(document.querySelector("h1").textContent,"accuracy",d.getTime(),"1")
                 localStorage.setItem("WPM",document.querySelector("h1").textContent)
-                localStorage.setItem("Accuracy", "accuracy")
+                localStorage.setItem("Accuracy", accuracy)
                 localStorage.setItem("Date", d)
-                localStorage.setItem("Title","s");
+                localStorage.setItem("Title",prompt("Save result with name: "));
+                
                 
                 clearInterval(x)
                 document.location.reload()
@@ -220,7 +230,7 @@
             el.class = 'score_header'
             el.textContent = title
             el.class = 'score'
-            word_score.textContent = 'WPM: ' + word
+            word_score.textContent =   word
             el.appendChild(word_score)
             accuracy_score.textContent = "Accuracy: " + acc
             date_time.textContent = "Date: " + date
